@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "331391892103",
+    "project_id": "heathyloocjj",
+    "storage_bucket": "heathyloocjj.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331391892103:android:3b3514ab9842ada5f9d622",
+        "android_client_info": {
+          "package_name": "com.example.app_n1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP4BTrdto7l5eEpPSF1gQ74OQjHLL27KE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

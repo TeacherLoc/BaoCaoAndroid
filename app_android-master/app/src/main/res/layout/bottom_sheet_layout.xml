@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thực đơn"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/add_meal_button"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:text="Click để tạo thực đơn"
+        android:textStyle="bold" >
+    </Button>
+
+    <TextView
+        android:id="@+id/dialog_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tập luyện"
+        android:textSize="18sp"
+        android:paddingTop="20sp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/cancel_buttones"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:text="Xem bài tập"
+        android:textStyle="bold"
+        />
+</LinearLayout>
