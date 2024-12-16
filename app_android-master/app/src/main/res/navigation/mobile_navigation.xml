@@ -13,16 +13,40 @@
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_favorite"
+        android:id="@+id/navigation_exercise"
         android:name="com.example.app_n1.ui.exercise.ExerciseFragment"
         android:label="@string/title_exercise"
         tools:layout="@layout/fragment_exercise" >
 
+        <action
+            android:id="@+id/action_navigation_exercise_to_exerciseDetailFragment"
+            app:destination="@id/exerciseDetailFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/exerciseDetailFragment"
+        android:name="com.example.app_n1.ui.exercise.ExerciseDetailFragment"
+        android:label="Chi tiết bài tập"
+        tools:layout="@layout/exercise_detail_fragment" >
+        <!-- Safe Args for passing data -->
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="imageResId"
+            app:argType="integer" />
+    </fragment>
+
 
     <fragment
         android:id="@+id/navigation_aboutme"
         android:name="com.example.app_n1.ui.aboutme.AboutmeFragment"
         android:label="@string/title_aboutme"
         tools:layout="@layout/fragment_aboutme" />
+
+
+
 </navigation>

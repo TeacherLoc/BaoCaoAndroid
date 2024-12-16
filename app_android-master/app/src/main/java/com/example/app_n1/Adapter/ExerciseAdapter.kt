@@ -1,32 +1,31 @@
 package com.example.app_n1.Adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_n1.R
+import com.example.app_n1.models.Exercise
 
-data class Exercise(val title: String, val description: String)
+
+
 
 class ExerciseAdapter(
-    private val exercises: List<com.example.app_n1.models.Exercise>,
+    private val exercises: List<Exercise>,
     private val onItemClick: (Exercise) -> Unit
 ) : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>() {
 
-    inner class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvTitle: TextView = itemView.findViewById(R.id.tv_exercise_title)
-        val tvDescription: TextView = itemView.findViewById(R.id.tv_exercise_description)
+    inner class ExerciseViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val title: TextView = view.findViewById(R.id.textExerciseTitle)
+        val image: ImageView = view.findViewById(R.id.imageExercise)
 
-        fun bind(exercise: com.example.app_n1.models.Exercise) {
-            tvTitle.text = exercise.title
-            tvDescription.text = exercise.description
+        fun bind(exercise: Exercise) {
+            title.text = exercise.title
+            image.setImageResource(exercise.imageResId)
             itemView.setOnClickListener { onItemClick(exercise) }
         }
-    }
-
-    private fun onItemClick(exercise: com.example.app_n1.models.Exercise) {
-        TODO("Not yet implemented")
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
@@ -39,5 +38,5 @@ class ExerciseAdapter(
         holder.bind(exercises[position])
     }
 
-    override fun getItemCount() = exercises.size
+    override fun getItemCount(): Int = exercises.size
 }

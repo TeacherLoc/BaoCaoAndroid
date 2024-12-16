@@ -16,6 +16,13 @@
         <activity android:name=".WelcomeActivity"
             android:exported="true"/>
         <activity
+            android:name=".ui.exercise.ExerciseDetailFragment"
+            android:exported="true" />
+        <activity
+            android:name=".ui.exercise.ExerciseFragment"
+            android:exported="true" />
+
+        <activity
             android:name=".mealActivity"
             android:exported="false" />
         <activity

@@ -6,57 +6,44 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.app_n1.Adapter.ExerciseAdapter
-import com.example.app_n1.ExerciseDetailActivity
+import com.example.app_n1.R
 import com.example.app_n1.databinding.FragmentExerciseBinding
 import com.example.app_n1.models.Exercise
 
 
 class ExerciseFragment : Fragment() {
 
-    private var _binding: FragmentExerciseBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: ExerciseAdapter
+    private val exerciseList = listOf(
+        Exercise("Hít đất", "Cách tập: Đẩy lên và xuống ...", R.drawable.user_image),
+        Exercise("Gập bụng", "Cách tập: Nằm ngửa, co chân ...", R.drawable.user_image),
+        Exercise("Chạy bộ", "Cách tập: Chạy nhẹ nhàng ...", R.drawable.user_image)
+    )
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentExerciseBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_exercise, container, false)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        // Danh sách bài tập mẫu
-        val exercises = listOf(
-            Exercise("Push-ups", "A basic push exercise for the upper body."),
-            Exercise("Squats", "A fundamental lower-body exercise."),
-            Exercise("Plank", "A core stabilization exercise."),
-            Exercise("Lunges", "Great for balance and strengthening legs."),
-            Exercise("Sit-ups", "Classic core exercise for abs."),
-        )
-
-        // Khởi tạo adapter và thiết lập RecyclerView
-        val adapter = ExerciseAdapter(exercises) { exercise ->
-            // Mở ExerciseDetailActivity khi nhấn vào item
-            val intent = Intent(requireContext(), ExerciseDetailActivity::class.java).apply {
-                putExtra("exercise_title", exercise.title)
-                putExtra("exercise_description", exercise.description)
-            }
-            startActivity(intent)
+        recyclerView = view.findViewById(R.id.recyclerView)
+        adapter = ExerciseAdapter(exerciseList) { exercise ->
+            val action = ExerciseFragmentDirections
+                .actionNavigationExerciseToExerciseDetailFragment(
+                    exercise.title,
+                    exercise.description,
+                    exercise.imageResId
+                )
+            findNavController().navigate(action)
         }
 
-        binding.recyclerView.apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            this.adapter = adapter
-        }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = adapter
+        return view
     }
 }

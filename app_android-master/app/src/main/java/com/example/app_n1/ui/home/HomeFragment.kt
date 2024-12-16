@@ -144,6 +144,9 @@ class HomeFragment : Fragment() {
             alertDialog.dismiss()
         }
 
+        dialogView.findViewById<Button>(R.id.cancel_buttones).setOnClickListener {
+        }
+
         // Hiển thị AlertDialog
         alertDialog.show()
     }

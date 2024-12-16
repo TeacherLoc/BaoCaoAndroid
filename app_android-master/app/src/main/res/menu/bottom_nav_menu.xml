@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_favorite"
+        android:id="@+id/navigation_exercise"
         android:icon="@drawable/baseline_favorite_24"
         android:title="@string/title_exercise" />
 

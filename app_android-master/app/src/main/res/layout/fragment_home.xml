@@ -353,7 +353,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <LinearLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -421,7 +420,7 @@
                     android:id="@+id/recyclernote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5sp"/>
+                    android:padding="5sp" />
             </LinearLayout>
 
         </LinearLayout>

@@ -48,7 +48,8 @@ data class DailyLog(
 
 data class Exercise(
     val title: String,
-    val description: String
+    val description: String,
+    val imageResId: Int
 )
 
 data class Meal(

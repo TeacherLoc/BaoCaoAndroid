@@ -29,6 +29,7 @@
         android:textSize="18sp"
         android:paddingTop="20sp"
         android:textStyle="bold" />
+
     <Button
         android:id="@+id/cancel_buttones"
         android:layout_width="match_parent"
