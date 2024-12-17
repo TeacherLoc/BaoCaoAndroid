@@ -53,7 +53,6 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.047"></androidx.appcompat.widget.Toolbar>
 
-
                 <ProgressBar
                     android:id="@+id/circularProgressBar"
                     android:layout_width="184dp"
@@ -358,6 +357,21 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
+                <TextView
+                    android:id="@+id/textActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lưu ý"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclernote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5sp" />
+
                 <!-- Bữa sáng -->
                 <TextView
                     android:id="@+id/textViewBreakfast"
@@ -406,21 +420,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5sp"/>
 
-                <!-- Tập Luyện -->
-                <TextView
-                    android:id="@+id/textActivity"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Lưu ý"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:padding="10dp"/>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclernote"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5sp" />
             </LinearLayout>
 
         </LinearLayout>

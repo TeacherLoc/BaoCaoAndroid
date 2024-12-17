@@ -12,7 +12,7 @@
         android:id="@+id/imageView4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:foreground="@drawable/background_main_all3"
+        android:foreground="@drawable/background2"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,113 +24,188 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="362dp"
-        android:layout_height="59dp"
+        android:layout_width="364dp"
+        android:layout_height="65dp"
+        android:background="@drawable/haha"
+        android:backgroundTint="#883E5096"
         android:fontFamily="@font/lobster"
         android:gravity="center"
         android:text="Healthy With Loocj"
-        android:textColor="#FCE45472"
+        android:textColor="#FFFFFF"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.154" />
-
+        app:layout_constraintVertical_bias="0.177" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="384dp"
+        android:layout_height="44dp"
         android:fontFamily="@font/adlam_display"
-        android:text="Đăng ký hồ sơ"
-        android:textColor="@color/black"
+        android:text="Welcome"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.178"
         app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.018" />
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.079" />
 
     <EditText
-        android:textColor="@color/black"
         android:id="@+id/txtEmailRe"
         android:layout_width="338dp"
-        android:layout_height="63dp"
+        android:layout_height="64dp"
         android:layout_marginBottom="184dp"
-        android:backgroundTint="@color/black"
-
+        android:background="@drawable/khungvien"
+        android:backgroundTint="#A1FFFFFF"
         android:drawableLeft="@drawable/baseline_email_24"
         android:drawablePadding="13dp"
-        android:hint="Email"
-        android:textColorHint="@color/black"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNameRe"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.064"
         app:layout_constraintWidth_percent=".8" />
 
+    <TextView
+        android:layout_width="189dp"
+        android:layout_height="29dp"
+        android:text="Tên đăng nhập"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.27" />
+
     <EditText
-        android:textColor="@color/black"
         android:id="@+id/txtNameRe"
         android:layout_width="338dp"
         android:layout_height="63dp"
-        android:backgroundTint="@color/black"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/khungvien"
+        android:backgroundTint="#A1FFFFFF"
         android:drawableLeft="@drawable/baseline_account_circle_24"
         android:drawablePadding="13dp"
-        android:hint="Tên đăng nhập"
-        android:textColorHint="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.13"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.293"
         app:layout_constraintWidth_percent=".8" />
 
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="189dp"
+        android:layout_height="29dp"
+        android:text="Email"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <TextView
+        android:layout_width="189dp"
+        android:layout_height="29dp"
+        android:text="Mật khẩu"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    <TextView
+        android:layout_width="189dp"
+        android:layout_height="29dp"
+        android:text="Nhập lại mật khẩu"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.615" />
+
     <EditText
-        android:textColor="@color/black"
         android:id="@+id/txtPasswprdRe"
         android:layout_width="338dp"
         android:layout_height="63dp"
-        android:backgroundTint="@color/black"
+        android:background="@drawable/khungvien"
+        android:backgroundTint="#A1FFFFFF"
         android:drawableLeft="@drawable/baseline_password_24"
         android:drawablePadding="13dp"
-        android:hint="Mật khẩu"
-        android:textColorHint="@color/black"
-
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmailRe"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.373"
         app:layout_constraintWidth_percent=".8" />
 
+    <EditText
+        android:id="@+id/txtPasswprdRee"
+        android:layout_width="338dp"
+        android:layout_height="63dp"
+        android:background="@drawable/khungvien"
+        android:backgroundTint="#A1FFFFFF"
+        android:drawableLeft="@drawable/baseline_password_24"
+        android:drawablePadding="13dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.542"
+        app:layout_constraintWidth_percent=".8" />
+
+    <ImageView
+        android:layout_width="319dp"
+        android:layout_height="59dp"
+        android:background="@drawable/background_login_reg1"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.776" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="304dp"
         android:layout_height="56dp"
+        android:backgroundTint="#00F1EDED"
         android:fontFamily="@font/agbalumo"
         android:onClick="registerUser"
         android:shadowRadius="@android:integer/config_longAnimTime"
         android:text="Đăng ký"
         android:textSize="20sp"
-
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.698"
-        android:textStyle="bold"
-        />
-
+        app:layout_constraintVertical_bias="0.733" />
 
     <TextView
         android:id="@+id/textView5"
@@ -147,46 +222,48 @@
         app:layout_constraintHorizontal_bias="0.36"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.606" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:layout_width="147dp"
-        android:layout_height="27dp"
+        android:id="@+id/textView13"
+        android:layout_width="388dp"
+        android:layout_height="18dp"
         android:fontFamily="@font/agbalumo"
-        android:text="Hoặc"
+        android:gravity="center"
+        android:text="OR"
         android:textColor="@color/graylight"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.632"
+        app:layout_constraintHorizontal_bias="0.695"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="150dp"
-        android:layout_height="69dp"
+        android:layout_width="195dp"
+        android:layout_height="84dp"
         android:background="@drawable/icon_facebook"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.712"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="150dp"
-        android:layout_height="69dp"
+        android:layout_width="195dp"
+        android:layout_height="84dp"
         android:background="@drawable/icon_google"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912" />
+        app:layout_constraintVertical_bias="0.931" />
 
     <TextView
         android:id="@+id/textView6"
@@ -204,6 +281,6 @@
         app:layout_constraintHorizontal_bias="0.759"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.606" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

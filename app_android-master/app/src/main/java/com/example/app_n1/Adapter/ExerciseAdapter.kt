@@ -9,9 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.app_n1.R
 import com.example.app_n1.models.Exercise
 
-
-
-
 class ExerciseAdapter(
     private val exercises: List<Exercise>,
     private val onItemClick: (Exercise) -> Unit
