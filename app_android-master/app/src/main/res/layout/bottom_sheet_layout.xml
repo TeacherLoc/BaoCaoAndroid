@@ -18,8 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="60sp"
         android:text="Click để tạo thực đơn"
-        android:textStyle="bold" >
-    </Button>
+        android:textStyle="bold"></Button>
 
     <TextView
         android:id="@+id/dialog_title2"
@@ -37,4 +36,5 @@
         android:text="Xem bài tập"
         android:textStyle="bold"
         />
+
 </LinearLayout>

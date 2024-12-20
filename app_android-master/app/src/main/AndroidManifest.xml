@@ -21,7 +21,9 @@
         <activity
             android:name=".ui.exercise.ExerciseFragment"
             android:exported="true" />
-
+        <activity
+            android:name=".NewsDetailActivity"
+            android:exported="false" />
         <activity
             android:name=".mealActivity"
             android:exported="false" />

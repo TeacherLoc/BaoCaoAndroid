@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#042A50"
         android:orientation="horizontal"
         android:padding="15dp">
 
@@ -17,12 +18,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@color/white"
             android:layout_weight="1">
 
             <TextView
                 android:id="@+id/food_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#042A50"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -30,24 +33,28 @@
                 android:id="@+id/food_calories"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#042A50"
                 android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/food_protein"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#042A50"
                 android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/food_fat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#042A50"
                 android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/food_carbs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#042A50"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -55,9 +62,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" + "
-            android:textSize="50sp"
+            android:text="Thêm"
+            android:textSize="20sp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             android:layout_gravity="center_vertical"
             android:paddingStart="8dp" />
 

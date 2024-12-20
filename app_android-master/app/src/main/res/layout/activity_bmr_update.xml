@@ -12,7 +12,7 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_tonbar"
+        android:background="@drawable/khungvien2"
         android:theme="@style/ThemeOverlay.MaterialComponents.ActionBar"
         tools:ignore="MissingConstraints">
 
@@ -30,14 +30,14 @@
                 <!-- Nút quay trở lại -->
                 <ImageView
                     android:id="@+id/back_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="41dp"
+                    android:layout_height="43dp"
                     android:contentDescription="Back"
+                    android:onClick="back_aboutme"
                     android:src="@drawable/baseline_keyboard_arrow_left_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:onClick="back_aboutme"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <!-- Tiêu đề bên phải -->
                 <TextView
@@ -75,12 +75,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#042A50"
             android:orientation="horizontal"
             android:padding="16dp">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:background="#9F5A8BAF"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -89,6 +91,7 @@
                     android:layout_height="wrap_content"
                     android:text="Kcal/ngày"
                     android:textSize="18sp"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -97,6 +100,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1264"
+                android:background="#9F5A8BAF"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -119,6 +124,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#042A50"
             android:orientation="horizontal"
             android:padding="16dp">
 
@@ -126,6 +132,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#9F5A8BAF"
                 android:orientation="vertical">
 
                 <TextView
@@ -133,6 +140,7 @@
                     android:layout_height="wrap_content"
                     android:text="Chiều cao"
                     android:textSize="18sp"
+                    android:textColor="@color/white"
                     android:textStyle="bold"/>
             </LinearLayout>
 
@@ -141,7 +149,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="164.7"
+                android:background="#9F5A8BAF"
                 android:textSize="18sp"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -162,6 +172,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#042A50"
             android:orientation="horizontal"
             android:padding="16dp">
 
@@ -169,12 +180,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#9F5A8BAF"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cân nặng"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -185,6 +198,8 @@
                 android:layout_height="wrap_content"
                 android:text="50"
                 android:textSize="18sp"
+                android:textColor="@color/white"
+                android:background="#9F5A8BAF"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -207,6 +222,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#042A50"
             android:orientation="horizontal"
             android:padding="16dp">
 
@@ -214,6 +230,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#9F5A8BAF"
                 android:orientation="vertical">
 
                 <TextView
@@ -221,6 +238,7 @@
                     android:layout_height="wrap_content"
                     android:text="Tuổi"
                     android:textSize="18sp"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -230,6 +248,8 @@
                 android:layout_height="wrap_content"
                 android:text="21"
                 android:textSize="18sp"
+                android:textColor="@color/white"
+                android:background="#9F5A8BAF"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -252,6 +272,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#042A50"
             android:orientation="horizontal"
             android:padding="16dp">
 
@@ -259,6 +280,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#9F5A8BAF"
                 android:orientation="vertical">
 
                 <TextView
@@ -266,7 +288,8 @@
                     android:layout_height="wrap_content"
                     android:text="Giới tính"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <TextView
@@ -274,6 +297,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nam"
+                android:textColor="@color/white"
+                android:background="#9F5A8BAF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>

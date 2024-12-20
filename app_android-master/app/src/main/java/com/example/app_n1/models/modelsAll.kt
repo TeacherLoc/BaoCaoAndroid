@@ -27,7 +27,7 @@ data class FoodUser(
     val name: String = "",     // food name
     val calories: Double = 0.0,
     val protein: Double = 0.0,
-    val fat: Double = 0.0,
+    val fat: String = "",
     val carbohydrates: Double = 0.0
 )
 data class Food(
@@ -35,8 +35,8 @@ data class Food(
     val name: String = "",
     val calories: Int = 0,
     val protein: Double = 0.0,
-    val fat: Double = 0.0,
-    val carbs: Double = 0.0,
+    val fat: String = "",
+    val carbs: String = "",
 )
 data class DailyLog(
     val logId: String = "",
@@ -62,4 +62,9 @@ data class WeightLog(
     val userId: String = "",     // link to User
     val weight: Double = 0.0,    // weight of the user at the time of log
     val date: Long = 0L          // timestamp for the log entry (in milliseconds)
+)
+data class NewsItem(
+    val imageRes: Int, // Resource ID của hình ảnh
+    val title: String, // Tiêu đề tin tức
+    val description: String // Mô tả ngắn
 )

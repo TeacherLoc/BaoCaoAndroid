@@ -22,7 +22,7 @@ import kotlin.math.pow
 private val database: DatabaseReference = FirebaseUtils.getDatabaseReference()
 fun registerDao(context: Context, name: String, email: String, password: String) {
     // Kiểm tra xem các trường có rỗng không
-    if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+    if (name.isEmpty() || email.isEmpty() || password.isEmpty() || password.length < 3) {
         Toast.makeText(context, "Vui lòng điền vào tất cả các trường có giá trị hợp lệ", Toast.LENGTH_SHORT).show()
         return
     }
@@ -60,7 +60,7 @@ fun registerDao(context: Context, name: String, email: String, password: String)
 fun loginDao(context: Context, email: String, password: String) {
 
     if (email.isEmpty() || password.isEmpty()) {
-        Toast.makeText(context, "Please fill all fields", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Kiểm tra lại tên đăng nhập và mật khẩu", Toast.LENGTH_SHORT).show()
         return
     }
 
@@ -84,7 +84,7 @@ fun loginDao(context: Context, email: String, password: String) {
                 editor.putString("userEmail", user.email)
                 editor.apply() // Áp dụng thay đổi
 
-                Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Đăng nhập thành công!!!", Toast.LENGTH_SHORT).show()
 
                 // Điều hướng sang MainActivity sau khi đăng nhập thành công
                 val intent = Intent(context, MainActivity::class.java)
@@ -95,10 +95,10 @@ fun loginDao(context: Context, email: String, password: String) {
         }
 
         if (!isUserFound) {
-            Toast.makeText(context, "Invalid email or password", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Kiểm tra lại email và mật khẩu", Toast.LENGTH_SHORT).show()
         }
     }.addOnFailureListener {
-        Toast.makeText(context, "Login failed", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Xảy ra lỗi ! Vui lòng kiểm tra lại", Toast.LENGTH_SHORT).show()
     }
 }
 
@@ -142,7 +142,7 @@ fun logoutDao(context: Context) {
     editor.apply() // Áp dụng thay đổi
 
     // Hiển thị thông báo
-    Toast.makeText(context, "Logged out successfully", Toast.LENGTH_SHORT).show()
+    Toast.makeText(context, "Đăng xuất thành công!!!", Toast.LENGTH_SHORT).show()
 
     // Điều hướng người dùng trở lại màn hình đăng nhập
     val intent = Intent(context, LoginActivity::class.java)
@@ -229,7 +229,7 @@ fun checkEmailExists(context: Context, email: String, callback: (Boolean) -> Uni
         callback(isUserFound)
     }.addOnFailureListener {
         // Nếu có lỗi xảy ra, có thể coi như email không tồn tại
-        Toast.makeText(context, "Failed to check email existence", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Xảy ra lỗi ! Vui lòng kiểm tra lại", Toast.LENGTH_SHORT).show()
         callback(false)
     }
 }

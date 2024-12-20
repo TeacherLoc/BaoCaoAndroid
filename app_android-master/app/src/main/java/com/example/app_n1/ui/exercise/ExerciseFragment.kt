@@ -67,7 +67,7 @@ class ExerciseFragment : Fragment() {
                 "Giữ tư thế tối đa trong vòng 5 phút kết hợp với điều trình hơi thở, thư giãn. Nếu cảm thấy các tình trạng khó chịu, tức ngực hoặc quá đau tức ở lưng thì có thể dừng bài tập.", R.drawable.gian_co),
         Exercise("Bật nhảy tại chỗ", "Cách tập: " +
                 "Đứng với hai chân rộng bằng vai và lùi lại cách bục nhảy một khoảng tùy thuộc vào độ cao của bục.Lấy đà bằng cách hạ thấp người và đưa hai cánh tay ra sau.Thực hiện cú nhảy bằng sức mạnh của bàn chân, đầu gối và hông, đồng thời vung mạnh hai tay về phía trước.Tiếp đất trên bục trong tư thế hạ thấp người để giảm lực tác động của cú nhảy.", R.drawable.bat_nhay),
-        Exercise("", "Cách tập: " +
+        Exercise("Yoga", "Cách tập: " +
                 "Thực hiện tư thế xếp bằng, lưng thẳng, cơ bụng thả lỏng. Miệng nhẩm câu “Om Shanti” trong 1 phút. Đây là hình thức cầu nguyện quan trọng của đạo Hindu. Quá trình này sẽ giúp tâm hồn bạn được thư giãn hơn và các suy nghĩ dần lắng đọng. Bạn cũng có thể chắp tay cầu nguyện trong thời gian này để tinh thần được thả lỏng hoàn toàn.", R.drawable.yoga),
         Exercise("Đạp xe", "Cách tập: " +
                 "Đạp xe dần đều", R.drawable.dap_xe),

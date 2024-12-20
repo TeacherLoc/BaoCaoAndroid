@@ -27,8 +27,8 @@ class itemFoodAdapter(private val foodList: MutableList<Food>,
             binding.foodName.text = foodItem.name
             binding.foodCalories.text = "Calories: ${foodItem.calories}"
             binding.foodProtein.text = "Protein: ${foodItem.protein}g"
-            binding.foodFat.text = "Fat: ${foodItem.fat}g"
-            binding.foodCarbs.text = "Carbs: ${foodItem.carbs}g"
+            binding.foodFat.text = "${foodItem.fat}"
+            binding.foodCarbs.text = "Link hướng dẫn nấu: ${foodItem.carbs}"
 
             binding.root.setOnClickListener {
                 onItemClickListener?.invoke(foodItem)

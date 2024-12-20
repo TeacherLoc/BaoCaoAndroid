@@ -81,7 +81,7 @@ class mealActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@mealActivity, "Error loading food data", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@mealActivity, "Lỗi tải dữ liệu", Toast.LENGTH_SHORT).show()
             }
         })
     }
@@ -172,6 +172,6 @@ class mealActivity : AppCompatActivity() {
     // Xử lý nút quay lại
     override fun onBackPressed() {
         super.onBackPressed()
-        Toast.makeText(this, "Returning to previous screen", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Trở lại màn hình chính", Toast.LENGTH_SHORT).show()
     }
 }

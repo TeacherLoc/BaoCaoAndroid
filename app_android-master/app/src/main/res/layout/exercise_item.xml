@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@drawable/khungvien2"
         android:padding="8dp">
 
         <ImageView
@@ -28,6 +29,7 @@
             android:layout_weight="1"
             android:text="Tên bài tập"
             android:textSize="16sp"
+            android:textColor="#042A50"
             android:textStyle="bold" />
 
     </LinearLayout>

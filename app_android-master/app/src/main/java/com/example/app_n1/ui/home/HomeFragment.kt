@@ -10,14 +10,24 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.example.app_n1.Adapter.IteambreakfastAdapter
 import com.example.app_n1.Adapter.Item
+import com.example.app_n1.Adapter.NewsAdapter
+import com.example.app_n1.NewsDetailActivity
 import com.example.app_n1.R
 import com.example.app_n1.databinding.FragmentHomeBinding
 import com.example.app_n1.mealActivity
 import com.example.app_n1.models.DailyLog
+import com.example.app_n1.models.NewsItem
+import com.github.mikephil.charting.components.XAxis
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -36,9 +46,7 @@ class HomeFragment : Fragment() {
     private val breakfastItems = mutableListOf<Item>()
     private val lunchItems = mutableListOf<Item>()
     private val dinnerItems = mutableListOf<Item>()
-    private val activityItems = listOf(
-        Item("Đi bộ", "130 kcal - 30p")
-    )
+    private val newsList = mutableListOf<NewsItem>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,7 +59,11 @@ class HomeFragment : Fragment() {
 
         setupViews(root)
 
-        // Gọi hàm để vẽ biểu đồ sau khi layout đã được inflate
+        setupNewsCarousel()
+
+        changlink()
+
+        // Gọi hàm để vẽ biểu đồ
         setupLineChart()
 
         val fabAddMeal: FloatingActionButton = root.findViewById(R.id.fab_add_meal)
@@ -67,13 +79,12 @@ class HomeFragment : Fragment() {
         val textViewDinner: TextView = root.findViewById(R.id.textViewDinner)
         val textViewBreakfast: TextView = root.findViewById(R.id.textViewBreakfast)
         val textViewLunch: TextView = root.findViewById(R.id.textViewLunch)
-        val textActivity: TextView = root.findViewById(R.id.textActivity)
 
         // Kiểm tra nếu breakfastItems không rỗng thì hiển thị textViewBreakfast
         textViewBreakfast.visibility = if (breakfastItems.isEmpty()) View.GONE else View.VISIBLE
         textViewLunch.visibility = if (lunchItems.isEmpty()) View.GONE else View.VISIBLE
         textViewDinner.visibility = if (dinnerItems.isEmpty()) View.GONE else View.VISIBLE
-        textActivity.visibility = if (activityItems.isEmpty()) View.GONE else View.VISIBLE
+
     }
 
     private fun loadMealData() {
@@ -115,14 +126,16 @@ class HomeFragment : Fragment() {
 
                 // Cập nhật lại UI sau khi tải dữ liệu
                 setupViews(requireView())
+
                 setupMealViews()
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // Handle error if needed
+
             }
         })
     }
+
 
     private fun showCustomDialog() {
         // Tạo AlertDialog Builder
@@ -145,6 +158,7 @@ class HomeFragment : Fragment() {
         }
 
         dialogView.findViewById<Button>(R.id.cancel_buttones).setOnClickListener {
+            alertDialog.dismiss()
         }
 
         // Hiển thị AlertDialog
@@ -176,12 +190,6 @@ class HomeFragment : Fragment() {
             binding.recyclerViewDinner.visibility = View.GONE
         }
 
-        // Hoạt động
-        if (activityItems.isNotEmpty()) {
-
-        } else {
-            binding.recyclernote.visibility = View.GONE
-        }
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView, items: MutableList<Item>) {
@@ -258,6 +266,96 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupLineChart() {
+        // Lấy tham chiếu tới LineChart từ View Binding
+        val lineChart = binding.lineChart
 
+        // Dữ liệu mẫu cho biểu đồ - thay thế bằng dữ liệu thực từ Firebase nếu có
+        val sampleData = listOf(
+            Entry(0f, 65f),  // Ngày 1: 65kg
+            Entry(1f, 64.5f), // Ngày 2: 64.5kg
+            Entry(2f, 64f),   // Ngày 3: 64kg
+            Entry(3f, 63.8f), // Ngày 4: 63.8kg
+            Entry(4f, 65f),  // Ngày 5: 63.5kg
+            Entry(5f,63f), // Ngày 6: 63kg
+            Entry(6f,63.5f) // Ngày 7: 63.5kg
+        )
+
+        val xLabels = listOf("Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7")
+
+        // Tạo dataset cho biểu đồ
+        val lineDataSet = LineDataSet(sampleData, "Cân nặng hàng ngày").apply {
+            color = resources.getColor(R.color.purple_500, null)
+            valueTextColor = resources.getColor(R.color.black, null)
+            lineWidth = 2f
+            circleRadius = 4f
+            setCircleColor(resources.getColor(R.color.teal_200, null))
+            setDrawCircleHole(false)
+            setDrawValues(false)
+            mode = LineDataSet.Mode.CUBIC_BEZIER // Đường cong mượt
+        }
+
+        // Tạo dữ liệu biểu đồ từ dataset
+        val lineData = LineData(lineDataSet)
+
+        // Gán dữ liệu vào biểu đồ
+        lineChart.data = lineData
+
+        // Tùy chỉnh trục X
+        val xAxis = lineChart.xAxis
+        xAxis.position = XAxis.XAxisPosition.BOTTOM
+        xAxis.valueFormatter = IndexAxisValueFormatter(xLabels)
+        xAxis.granularity = 1f
+        xAxis.textColor = resources.getColor(R.color.black, null)
+
+        // Tùy chỉnh trục Y trái
+        val leftAxis = lineChart.axisLeft
+        leftAxis.textColor = resources.getColor(R.color.black, null)
+
+        // Ẩn trục Y phải
+        val rightAxis = lineChart.axisRight
+        rightAxis.isEnabled = false
+
+        // Tùy chỉnh giao diện chung của biểu đồ
+        lineChart.description.isEnabled = false
+        lineChart.legend.isEnabled = false
+        lineChart.setTouchEnabled(true)
+        lineChart.setPinchZoom(true)
+        lineChart.animateX(1000)
+
+        // Làm mới biểu đồ để hiển thị
+        lineChart.invalidate()
     }
+
+    private fun setupNewsCarousel() {
+        // Dữ liệu tin tức mẫu
+        newsList.add(NewsItem(R.drawable.khangbibat, "Ngất xĩu do uống nhiều đường mía", "Hôm qua anh Trần Nhật Khang đã bị bắt do uống nhiều đường mía"))
+        newsList.add(NewsItem(R.drawable.lenconthankinh, "Máu dồn lên não và những hành động kì lạ", "Hào không gay đã lên cơn động dục không kiểm soát do máu lên não"))
+        newsList.add(NewsItem(R.drawable.ung_thu, "70% bệnh nhân ung thư phổi phát hiện muộn, ai có nguy cơ?", "Ung thư phổi diễn biến âm thầm dễ nhầm lẫn với bệnh hô hấp thông thường"))
+        newsList.add(NewsItem(R.drawable.trai_cay, "Ăn trái cây có giúp giảm cân không?", "Ăn trái cây có thể giúp bạn giảm cân, khi bạn lựa chọn trái cây thay vì những món ăn chế biến sẵn giàu lượng đường bổ sung hoặc chất béo."))
+        newsList.add(NewsItem(R.drawable.ung_thu, "70% bệnh nhân ung thư phổi phát hiện muộn, ai có nguy cơ?", "Ung thư phổi diễn biến âm thầm dễ nhầm lẫn với bệnh hô hấp thông thường"))
+        newsList.add(NewsItem(R.drawable.ung_thu, "70% bệnh nhân ung thư phổi phát hiện muộn, ai có nguy cơ?", "Ung thư phổi diễn biến âm thầm dễ nhầm lẫn với bệnh hô hấp thông thường"))
+        newsList.add(NewsItem(R.drawable.ung_thu, "70% bệnh nhân ung thư phổi phát hiện muộn, ai có nguy cơ?", "Ung thư phổi diễn biến âm thầm dễ nhầm lẫn với bệnh hô hấp thông thường"))
+
+        val adapter = NewsAdapter(newsList) { newsItem ->
+            // Xử lý sự kiện khi nhấn vào tin tức
+            val intent = Intent(requireContext(), NewsDetailActivity::class.java).apply {
+                putExtra("title", newsItem.title)
+                putExtra("description", newsItem.description)
+                putExtra("imageRes", newsItem.imageRes)
+            }
+            startActivity(intent)
+        }
+        binding.viewPager2.adapter = adapter // Gán adapter cho ViewPager2
+    }
+
+    private fun changlink()
+    {
+        val cancelButton = view?.findViewById<Button>(R.id.cancel_buttones)
+
+        cancelButton?.setOnClickListener()
+        {
+            findNavController().navigate(R.id.action_navigation_home_to_navigation_exercise)
+        }
+    }
+
 }

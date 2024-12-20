@@ -2,8 +2,6 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
-
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -17,48 +15,63 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:contentScrim="?attr/colorPrimary"
+            android:background="@drawable/l4"
             app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
-
             app:toolbarId="@+id/toolbar">
-
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_main_all">
+                android:background="@drawable/l3">
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="403dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="36dp"
+                    android:fontFamily="@font/lobster"
+                    android:gravity="center"
+                    android:text="HEALTHY WITH LOOCJ"
+                    android:textColor="#FFFFFF"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                    app:layout_constraintHorizontal_bias="0.481"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.125" />
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginBottom="4dp"
                     android:text="Nhịp tim"
-                    android:textColor="@color/black"
+                    android:textColor="@color/graylight"
                     android:textSize="20dp"
                     app:layout_constraintBottom_toTopOf="@+id/progressBar6"
-                    app:layout_constraintEnd_toStartOf="@+id/textView3"
-                    app:layout_constraintHorizontal_bias="0.256"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/progressText2"
-                    app:layout_constraintVertical_bias="0.864" />
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
-                    android:layout_width="581dp"
-                    android:layout_height="40dp"
-                    android:background="#E2FFFF"
+                    android:layout_width="311dp"
+                    android:layout_height="46dp"
+                    android:background="#042A50"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_bias="0.696"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.047"></androidx.appcompat.widget.Toolbar>
+                    app:layout_constraintVertical_bias="0.005"></androidx.appcompat.widget.Toolbar>
 
                 <ProgressBar
                     android:id="@+id/circularProgressBar"
                     android:layout_width="184dp"
                     android:layout_height="166dp"
                     android:layout_marginTop="16dp"
-                    android:background="#DCF5FC"
+                    android:background="#042A50"
                     android:indeterminate="false"
                     android:indeterminateOnly="false"
                     android:max="100"
@@ -67,9 +80,10 @@
                     android:progressTint="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.831"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/toolbar"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintVertical_bias="0.566" />
 
                 <TextView
                     android:id="@+id/progressTex2"
@@ -79,7 +93,7 @@
                     android:fontFamily="@font/adamina"
                     android:text="311"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="#FFFFFF"
                     android:textSize="26sp"
                     android:textStyle="bold"
 
@@ -91,82 +105,13 @@
                     app:layout_constraintVertical_bias="0.41" />
 
                 <TextView
-                    android:id="@+id/progressTex3"
-                    android:layout_width="108dp"
-                    android:layout_height="39dp"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/adamina"
-                    android:text="100"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/circularProgressBar"
-                    app:layout_constraintHorizontal_bias="0.527"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.256" />
-
-                <TextView
-                    android:id="@+id/progressTex4"
-                    android:layout_width="114dp"
-                    android:layout_height="41dp"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/adamina"
-                    android:text="100"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/circularProgressBar"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.258" />
-
-                <TextView
-                    android:id="@+id/progressText"
-                    android:layout_width="106dp"
-                    android:layout_height="25dp"
-                    android:layout_gravity="center"
-                    android:text="Calo out"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/circularProgressBar"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.341" />
-
-                <TextView
-                    android:id="@+id/progressText2"
-                    android:layout_width="106dp"
-                    android:layout_height="27dp"
-                    android:layout_gravity="center"
-                    android:text="Calo in"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/progressTex3"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.348" />
-
-                <TextView
                     android:id="@+id/progressText5"
                     android:layout_width="114dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center"
                     android:text="Calo cần nạp"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
-
+                    android:textColor="#FFFFFF"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@+id/circularProgressBar"
                     app:layout_constraintEnd_toEndOf="@+id/circularProgressBar"
@@ -174,119 +119,107 @@
                     app:layout_constraintTop_toTopOf="@+id/circularProgressBar"
                     app:layout_constraintVertical_bias="0.656" />
 
+
                 <ProgressBar
                     android:id="@+id/progressBar"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="124dp"
                     android:layout_height="12dp"
+                    android:layout_marginBottom="148dp"
                     android:max="100"
                     android:progress="80"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/circularProgressBar"
-                    app:layout_constraintVertical_bias="0.359" />
-
+                    app:layout_constraintHorizontal_bias="0.104"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <ProgressBar
                     android:id="@+id/progressBar6"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="124dp"
                     android:layout_height="12dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginBottom="232dp"
                     android:max="100"
                     android:progress="80"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/progressBar"
-                    app:layout_constraintHorizontal_bias="0.263"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/progressText2"
-                    app:layout_constraintVertical_bias="0.464" />
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <ProgressBar
                     android:id="@+id/progressBar7"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="124dp"
                     android:layout_height="12dp"
+                    android:layout_marginEnd="308dp"
+                    android:layout_marginBottom="56dp"
                     android:indeterminate="false"
                     android:max="100"
                     android:progress="80"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.6"
-                    app:layout_constraintStart_toEndOf="@+id/progressBar"
-                    app:layout_constraintTop_toBottomOf="@+id/progressText"
-                    app:layout_constraintVertical_bias="0.469" />
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="244dp"
                     android:text="Dinh dưỡng"
-                    android:textColor="@color/black"
+                    android:textColor="@color/graylight"
                     android:textSize="20dp"
-                    app:layout_constraintBottom_toTopOf="@+id/progressBar"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.524"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/circularProgressBar"
-                    app:layout_constraintVertical_bias="0.75" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="48dp" />
 
                 <TextView
                     android:id="@+id/textView7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="340dp"
+                    android:layout_marginBottom="4dp"
                     android:text="Huyết áp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/graylight"
                     android:textSize="20dp"
                     app:layout_constraintBottom_toTopOf="@+id/progressBar7"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.661"
-                    app:layout_constraintStart_toEndOf="@+id/textView3"
-                    app:layout_constraintTop_toBottomOf="@+id/progressText"
-                    app:layout_constraintVertical_bias="0.863" />
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="68dp"
                     android:text="90/s"
-                    android:textColor="@color/black"
+                    android:textColor="@color/graylight"
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textView9"
-                    app:layout_constraintHorizontal_bias="0.286"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/progressBar6"
-                    app:layout_constraintVertical_bias="0.111" />
+                    app:layout_constraintVertical_bias="0.049" />
 
                 <TextView
                     android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Thiếu nước"
-                    android:textColor="@color/black"
+                    android:textColor="@color/graylight"
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.527"
+                    app:layout_constraintHorizontal_bias="0.155"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/progressBar"
-                    app:layout_constraintVertical_bias="0.111" />
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="352dp"
                     android:text="125/s"
-                    android:textColor="@color/black"
+                    android:textColor="@color/graylight"
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.712"
-                    app:layout_constraintStart_toEndOf="@+id/textView9"
                     app:layout_constraintTop_toBottomOf="@+id/progressBar7"
-                    app:layout_constraintVertical_bias="0.111" />
+                    app:layout_constraintVertical_bias="0.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -310,6 +243,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cải thiện từng ngày"
+                android:textColor="#042A50"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 android:padding="10dp"/>
@@ -318,9 +252,9 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/white"> <!-- Màu nền của CardView -->
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"> <!-- Màu nền của CardView -->
 
             <!-- LinearLayout bên trong CardView -->
                 <LinearLayout
@@ -336,24 +270,26 @@
                         android:layout_height="wrap_content"
                         android:padding="10dp"
                         android:text="Cân nặng"
+                        android:textColor="#042A50"
                         android:textAlignment="center"
-                        android:textSize="20sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <!-- Biểu đồ (ví dụ biểu đồ đường) -->
                     <com.github.mikephil.charting.charts.LineChart
                         android:id="@+id/lineChart"
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
+                        android:layout_width="404dp"
+                        android:layout_height="187dp"
                         android:layout_marginTop="16dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="16dp">
 
@@ -361,64 +297,72 @@
                     android:id="@+id/textActivity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lưu ý"
+                    android:padding="10dp"
+                    android:text="Tin tức"
                     android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:padding="10dp"/>
+                    android:textStyle="bold" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclernote"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5sp" />
 
-                <!-- Bữa sáng -->
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPager2"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/khungvien2"
+                        android:layout_height="match_parent" />
+                </com.google.android.material.card.MaterialCardView>
+
                 <TextView
                     android:id="@+id/textViewBreakfast"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="10dp"
                     android:text="Bữa sáng"
                     android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:padding="10dp"/>
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewBreakfast"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5sp"/>
+                    android:padding="5sp" />
 
                 <!-- Bữa trưa -->
                 <TextView
                     android:id="@+id/textViewLunch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="10dp"
                     android:text="Bữa trưa"
                     android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:padding="10dp"/>
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewLunch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5sp"/>
+                    android:padding="5sp" />
 
                 <!-- Bữa tối -->
                 <TextView
                     android:id="@+id/textViewDinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="10dp"
                     android:text="Bữa tối"
                     android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:padding="10dp"/>
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewDinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5sp"/>
+                    android:padding="5sp" />
 
 
             </LinearLayout>

@@ -20,7 +20,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="149dp"
-            android:background="@drawable/rounded_bottom_corners">
+            android:background="@drawable/background_login_reg1">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -75,6 +75,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:layout_margin="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,6 +97,8 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:text="Bữa sáng"
+                android:background="#A6928B3B"
+                android:textColor="@color/white"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -116,6 +119,8 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:text="Bữa trưa"
+                android:background="#A6928B3B"
+                android:textColor="@color/white"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -136,6 +141,8 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:text="Bữa tối"
+                android:background="#A6928B3B"
+                android:textColor="@color/white"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 android:textStyle="bold" />

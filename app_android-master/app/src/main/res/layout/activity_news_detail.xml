@@ -1,0 +1,46 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/newsDetailImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/newsDetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="162dp"
+            android:paddingBottom="8dp"
+            android:textColor="#042A50"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/newsDetailDescription"
+            android:layout_width="match_parent"
+            android:layout_height="241dp"
+            android:lineSpacingExtra="4dp"
+            android:textColor="#042A50"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/newsDetailDescription1"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:autoLink="web"
+            android:lineSpacingExtra="4dp"
+            android:text="Cập nhật thêm nhiều thông tin tại:                                       https://tuoitre.vn/suc-khoe/dinh-duong.htm"
+            android:textColor="#042A50"
+            android:textColorLink="@color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+</ScrollView>

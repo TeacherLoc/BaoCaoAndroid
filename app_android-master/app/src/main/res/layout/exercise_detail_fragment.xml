@@ -31,6 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="13sp"
         android:textStyle="bold"
+        android:textColor="#042A50"
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="16dp" />
 
@@ -45,7 +46,69 @@
         android:autoLink="all"
         android:textSize="16sp"
         android:linksClickable="true"
-        android:textColorLink="#319074"
-        />
+        android:textColorLink="#319074" />
+
+    <ImageView
+        android:layout_width="410dp"
+        android:layout_height="188dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/duoinen2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textExerciseDescription" />
+
+    <TextView
+        android:id="@+id/textTimer2"
+        android:layout_width="394dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="188dp"
+        android:gravity="center"
+        android:text="Đồng hồ đếm thời gian cho set tập"
+        android:textColor="#042A50"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textExerciseDescription" />
+
+    <TextView
+        android:id="@+id/textTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="30"
+        android:textColor="#042A50"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textExerciseDescription" />
+
+    <Button
+        android:id="@+id/btnPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Dừng lại"
+        android:backgroundTint="#042A50"
+        app:layout_constraintTop_toBottomOf="@id/textTimer"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@id/btnResume" />
+
+    <Button
+        android:id="@+id/btnResume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#042A50"
+        android:layout_marginTop="16dp"
+        android:text="Bắt đầu"
+        app:layout_constraintTop_toBottomOf="@id/textTimer"
+        app:layout_constraintStart_toEndOf="@id/btnPause"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
